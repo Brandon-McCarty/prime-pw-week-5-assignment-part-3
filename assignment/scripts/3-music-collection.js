@@ -11,16 +11,19 @@ function addToCollection(array, title, artist, yearPublished){
         yearPublished: yearPublished
     }
     array.push(album)
+    return album;
 }
 
-addToCollection(collection, 'Nightmare', 'Avenged Sevenfold', '2010')
-console.log(collection);
 
-addToCollection(collection, 'The Black Parade', 'My Chemical Romance', '2006')
+console.log(addToCollection(collection, 'Nightmare', 'Avenged Sevenfold', '2010'));
 console.log(collection);
-
-addToCollection(collection, 'Tickets to My Downfall', 'Machine Gun Kelly', '2020')
+console.log(addToCollection(collection, 'The Black Parade', 'My Chemical Romance', '2006'));
 console.log(collection);
-
-addToCollection(collection, 'The Pick of Destiny', 'Tenacious D', '2006')
+console.log(addToCollection(collection, 'Tickets to My Downfall', 'Machine Gun Kelly', '2020'));
+console.log(collection);
+console.log(addToCollection(collection, 'The Pick of Destiny', 'Tenacious D', '2006'));
+console.log(collection);
+console.log(addToCollection(collection, 'Swan Songs', 'Hollywood Undead', '2008'));
+console.log(collection);
+console.log(addToCollection(collection, 'Meteora', 'Linkin Park', '2003'));
 console.log(collection);
