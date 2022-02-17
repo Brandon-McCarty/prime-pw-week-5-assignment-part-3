@@ -32,8 +32,9 @@ function showCollection(array){
     console.log(`The number of items in this collection is ${array.length}`);
     
     for(let i = 0; i < array.length; i++){
-        let album = array[i];
-        console.log(`${album.title} by ${album.artist}, published in the year ${album.yearPublished}`);    
+        // let album = array[i];
+        console.log(`${array[i].title} by ${array[i].artist}, published in the year ${array[i].yearPublished}`); 
+        // console.log(`${album.title} by ${album.artist}, published in the year ${album.yearPublished}`);    
     }
     return true;
 }
