@@ -6,8 +6,8 @@ console.log(collection);
 function addToCollection(array, title, artist, yearPublished){
     console.log('In addToCollection');
     let album = {
-        Title: title,
-        Artist: artist,
+        title: title,
+        artist: artist,
         yearPublished: yearPublished
     }
     array.push(album)
@@ -27,3 +27,15 @@ console.log(addToCollection(collection, 'Swan Songs', 'Hollywood Undead', '2008'
 // console.log(collection);
 console.log(addToCollection(collection, 'Meteora', 'Linkin Park', '2003'));
 console.log(collection);
+
+function showCollection(array){
+    console.log(`The number of items in this collection is ${array.length}`);
+    
+    for(let i = 0; i < array.length; i++){
+        let album = array[i];
+        console.log(`${album.title} by ${album.artist}, published in the year ${album.yearPublished}`);    
+    }
+    return true;
+}
+
+console.log('Should return true: ', showCollection(collection));
