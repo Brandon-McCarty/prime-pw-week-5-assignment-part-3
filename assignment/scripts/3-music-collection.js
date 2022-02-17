@@ -29,6 +29,7 @@ console.log(addToCollection(collection, 'Meteora', 'Linkin Park', '2003'));
 console.log(collection);
 
 function showCollection(array){
+    console.log('In showCollection');
     console.log(`The number of items in this collection is ${array.length}`);
     
     for(let i = 0; i < array.length; i++){
@@ -40,3 +41,18 @@ function showCollection(array){
 }
 
 console.log('Should return true: ', showCollection(collection));
+
+function findByArtist(array, artist){
+    console.log('In findByArtist');
+    let artistArray = [];
+    for (let singer of array){
+        if (singer.artist === artist){
+            artistArray.push(singer)
+        }
+    }
+    return artistArray;
+}
+
+console.log(findByArtist(collection, 'Tenacious D'));
+console.log(findByArtist(collection, 'Avenged Sevenfold'));
+console.log(findByArtist(collection, 'Eminem'));
