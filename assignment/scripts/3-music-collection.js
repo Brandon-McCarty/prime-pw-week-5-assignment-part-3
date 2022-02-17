@@ -62,3 +62,18 @@ console.log(addToCollection(collection, 'City of Evil', 'Avenged Sevenfold', '20
 console.log('Searching for albums by Avenged Sevenfold: ', findByArtist(collection, 'Avenged Sevenfold'));
 
 console.log('-----Stretch Goals-----');
+
+function search(array, artist, yearPublished){
+    console.log('In search');
+    let searchArray = [];
+    for (let info of array){
+        if (info.artist === artist && info.yearPublished === yearPublished){
+            searchArray.push(info)
+        }    
+    }
+    return searchArray;
+}
+
+console.log('The search results for Avenged Sevenfold in 2010 are: ', search(collection, 'Avenged Sevenfold', '2010'));
+console.log('The search results for Avenged Sevnfold in 2007 are: ', search(collection, 'Avenged Sevenfold', '2007'));
+console.log('The search results for Linkin Park in 2003 are: ', search(collection, 'Linkin Park', '2003'));
