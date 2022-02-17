@@ -26,7 +26,7 @@ console.log(addToCollection(collection, 'The Pick of Destiny', 'Tenacious D', '2
 console.log(addToCollection(collection, 'Swan Songs', 'Hollywood Undead', '2008'));
 // console.log(collection);
 console.log(addToCollection(collection, 'Meteora', 'Linkin Park', '2003'));
-console.log(collection);
+// console.log(collection);
 
 function showCollection(array){
     console.log('In showCollection');
@@ -53,6 +53,12 @@ function findByArtist(array, artist){
     return artistArray;
 }
 
-console.log(findByArtist(collection, 'Tenacious D'));
-console.log(findByArtist(collection, 'Avenged Sevenfold'));
-console.log(findByArtist(collection, 'Eminem'));
+console.log('Searching for albums by Tenacious D: ', findByArtist(collection, 'Tenacious D'));
+console.log('Searching for albums by Avenged Sevenfold: ', findByArtist(collection, 'Avenged Sevenfold'));
+console.log('Searching for albums by Eminem: ', findByArtist(collection, 'Eminem'));
+console.log('Searching for albums by Volbeat: ', findByArtist(collection, 'Volbeat'));
+
+console.log(addToCollection(collection, 'City of Evil', 'Avenged Sevenfold', '2005'));
+console.log('Searching for albums by Avenged Sevenfold: ', findByArtist(collection, 'Avenged Sevenfold'));
+
+console.log('-----Stretch Goals-----');
