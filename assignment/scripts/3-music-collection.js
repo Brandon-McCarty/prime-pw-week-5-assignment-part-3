@@ -69,11 +69,19 @@ function search(array, artist, yearPublished){
     for (let info of array){
         if (info.artist === artist && info.yearPublished === yearPublished){
             searchArray.push(info)
-        }    
+        } 
+        if (artist == '' || null  && yearPublished == '' || null){
+            console.log('No Input');
+            searchArray = array;
+        }
     }
-    return searchArray;
+        return searchArray;
 }
 
 console.log('The search results for Avenged Sevenfold in 2010 are: ', search(collection, 'Avenged Sevenfold', '2010'));
-console.log('The search results for Avenged Sevnfold in 2007 are: ', search(collection, 'Avenged Sevenfold', '2007'));
+console.log('The search results for Avenged Sevenfold in 2007 are: ', search(collection, 'Avenged Sevenfold', '2007'));
 console.log('The search results for Linkin Park in 2003 are: ', search(collection, 'Linkin Park', '2003'));
+console.log('The search results for blank are: ', search(collection, '', '' ));
+console.log('The search results for blank are: ', search(collection, '', null ));
+
+
