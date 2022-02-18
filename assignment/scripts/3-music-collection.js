@@ -106,9 +106,9 @@ console.log(addToCollection2(collection2, 'The Pick of Destiny', 'Tenacious D', 
 console.log(collection2);
 
 function trackSearch(array, track){
+    console.log('In trackSearch');
     for (let i = 0; i < array.length; i++){
         let list = array[i].tracks;
-        console.log(array[i].tracks);
         if (list[i] === track)
         return true;
     }
@@ -134,6 +134,8 @@ function search2(array, artist, yearPublished, trackName){
 }
 
 console.log('The search results for Avenged Sevenfold, 2010, Nightmare are: ', search2(collection2, 'Avenged Sevenfold', '2010', 'Nightmare'));
+console.log('The search results for My Chemical Romance, 2006, The Black Parade are: ', search2(collection2, 'My Chemical Romance', '2006', 'Welcome to the Black Parade'));
+console.log('The search results for My Chemical Romance, 2006, The Sharpest Lives are: ', search2(collection2, 'My Chemical Romance', '2006', 'The Sharpest Lives'));
 console.log('The search results for Avenged Sevenfold, 2010, Fiction are: ', search2(collection2, 'Avenged Sevenfold', '2010', 'Fiction'));
 console.log('The search results for blank are: ', search(collection2, '', '', '' ));
 
