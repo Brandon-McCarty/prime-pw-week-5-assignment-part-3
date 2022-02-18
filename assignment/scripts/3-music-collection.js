@@ -85,3 +85,42 @@ console.log('The search results for blank are: ', search(collection, '', '' ));
 console.log('The search results for blank are: ', search(collection, '', null ));
 
 
+let collection2 = [];
+
+function addToCollection2(array, title, artist, yearPublished, tracks, duration ){
+    console.log('In addToCollection');
+    let album = {
+        title: title,
+        artist: artist,
+        yearPublished: yearPublished,
+        tracks: tracks,
+        duration: duration
+    }
+    array.push(album)
+    return album;
+}
+
+console.log(addToCollection2(collection2, 'Nightmare', 'Avenged Sevenfold', '2010', ['Nightmare', 'Welcome to the Family', 'So Far Away'], ['6:14', '4:06', '5:27']));
+console.log(addToCollection2(collection2, 'The Black Parade', 'My Chemical Romance', '2006', ['This is How I Disappear', 'Welcome to the Black Parade', 'Famous Last Words'], ['3:59', '5:11', '4:59']));
+console.log(addToCollection2(collection2, 'The Pick of Destiny', 'Tenacious D', '2006', ['Kickapoo', 'Master Exploder', 'Beelzeboss'], ['4:14', '2:25', '5:36']));
+console.log(collection2);
+
+
+function search2(array, artist, yearPublished, trackName){
+    console.log('In search');
+    let searchArray = [];
+    for (let info of array){
+        if (info.artist === artist && info.yearPublished === yearPublished && info.tracks === trackName){
+            searchArray.push(info)
+        } 
+        if (artist == '' || null  && yearPublished == '' || null && trackName == '' || null){
+            console.log('No Input');
+            searchArray = array;
+        }
+    }
+        return searchArray;
+}
+
+console.log('The search results for Avenged Sevenfold, 2010, Nightmare are: ', search(collection2, 'Avenged Sevenfold', '2010', 'Nightmare'));
+console.log('The search results for Avenged Sevenfold, 2010, Fiction are: ', search(collection2, 'Avenged Sevenfold', '2010', 'Fiction'));
+console.log('The search results for blank are: ', search(collection2, '', '', '' ));
