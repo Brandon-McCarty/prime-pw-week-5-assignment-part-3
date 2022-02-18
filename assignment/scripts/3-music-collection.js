@@ -88,7 +88,7 @@ console.log('The search results for blank are: ', search(collection, '', null ))
 let collection2 = [];
 
 function addToCollection2(array, title, artist, yearPublished, tracks, duration ){
-    console.log('In addToCollection');
+    console.log('In addToCollection2');
     let album = {
         title: title,
         artist: artist,
@@ -105,12 +105,12 @@ console.log(addToCollection2(collection2, 'The Black Parade', 'My Chemical Roman
 console.log(addToCollection2(collection2, 'The Pick of Destiny', 'Tenacious D', '2006', ['Kickapoo', 'Master Exploder', 'Beelzeboss'], ['4:14', '2:25', '5:36']));
 console.log(collection2);
 
-
 function search2(array, artist, yearPublished, trackName){
-    console.log('In search');
+    console.log('In search2');
     let searchArray = [];
+    let tracksearch;
     for (let info of array){
-        if (info.artist === artist && info.yearPublished === yearPublished && info.tracks === trackName){
+        if (info.artist === artist && info.yearPublished === yearPublished && info.tracks == trackName){
             searchArray.push(info)
         } 
         if (artist == '' || null  && yearPublished == '' || null && trackName == '' || null){
@@ -121,6 +121,23 @@ function search2(array, artist, yearPublished, trackName){
         return searchArray;
 }
 
-console.log('The search results for Avenged Sevenfold, 2010, Nightmare are: ', search(collection2, 'Avenged Sevenfold', '2010', 'Nightmare'));
-console.log('The search results for Avenged Sevenfold, 2010, Fiction are: ', search(collection2, 'Avenged Sevenfold', '2010', 'Fiction'));
+console.log('The search results for Avenged Sevenfold, 2010, Nightmare are: ', search2(collection2, 'Avenged Sevenfold', '2010', 'Nightmare'));
+console.log('The search results for Avenged Sevenfold, 2010, Fiction are: ', search2(collection2, 'Avenged Sevenfold', '2010', 'Fiction'));
 console.log('The search results for blank are: ', search(collection2, '', '', '' ));
+
+console.log(collection2[0].tracks);
+
+function showCollection2(array){
+    console.log('In showCollection2');
+    console.log(`The number of items in this collection is ${array.length}`);
+    
+    for(let i = 0; i < array.length; i++){   
+        let track = array[i].tracks;
+         let time = array[i].duration;
+            console.log(`${array[i].title} by ${array[i].artist}, published in the year ${array[i].yearPublished}:`); 
+            console.log(`${track}: ${time}`);
+    }
+    return true;
+}
+
+showCollection2(collection2);
