@@ -105,17 +105,29 @@ console.log(addToCollection2(collection2, 'The Black Parade', 'My Chemical Roman
 console.log(addToCollection2(collection2, 'The Pick of Destiny', 'Tenacious D', '2006', ['Kickapoo', 'Master Exploder', 'Beelzeboss'], ['4:14', '2:25', '5:36']));
 console.log(collection2);
 
+function trackSearch(array, track){
+    for (let i = 0; i < array.length; i++){
+        let list = array[i].tracks;
+        console.log(array[i].tracks);
+        if (list[i] === track)
+        return true;
+    }
+    return false;
+}
+
+console.log(trackSearch(collection2, 'Nightmare'));
+console.log(trackSearch(collection2, 'Fiction'));
+
 function search2(array, artist, yearPublished, trackName){
-    console.log('In search2');
-    let searchArray = [];
-    let tracksearch;
+        console.log('In search2');
+        let searchArray = [];
     for (let info of array){
-        if (info.artist === artist && info.yearPublished === yearPublished && info.tracks == trackName){
-            searchArray.push(info)
-        } 
-        if (artist == '' || null  && yearPublished == '' || null && trackName == '' || null){
-            console.log('No Input');
-            searchArray = array;
+            if (info.artist === artist && info.yearPublished === yearPublished && trackSearch(array, trackName) === true){ 
+                searchArray.push(info)
+            } 
+            if (artist == '' || null  && yearPublished == '' || null && trackName == '' || null){
+                console.log('No Input');
+                searchArray = array;
         }
     }
         return searchArray;
@@ -144,3 +156,4 @@ function showCollection2(array){
 
 //console.log(`${i + 1}. ${track[i]}: ${time[i]}`);
 showCollection2(collection2);
+console.log('showCollection - should be true: ', showCollection2(collection2));
