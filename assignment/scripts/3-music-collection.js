@@ -135,9 +135,12 @@ function showCollection2(array){
         let track = array[i].tracks;
          let time = array[i].duration;
             console.log(`${array[i].title} by ${array[i].artist}, published in the year ${array[i].yearPublished}:`); 
-            console.log(`${track}: ${time}`);
+    for(let i = 0; i < array.length; i++){  
+            console.log(`${i + 1}. ${track[i]}: ${time[i]}`);
+        }      
     }
     return true;
 }
 
+//console.log(`${i + 1}. ${track[i]}: ${time[i]}`);
 showCollection2(collection2);
